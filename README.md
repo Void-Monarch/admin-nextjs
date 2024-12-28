@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Admin Panel
 
-## Getting Started
+A modern and efficient Admin Panel built using **Next.js**, **Tailwind CSS**, **shadcn/ui**, **Auth.js**, **Prisma ORM**, and **MongoDB**. This project is designed to provide an easy-to-use interface for managing application data with robust authentication and beautiful UI components.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Authentication**: Secure user authentication using Auth.js (Google, etc.).
+- **Database Integration**: Prisma ORM connected to a MongoDB database.
+- **Responsive Design**: Fully responsive UI styled with Tailwind CSS.
+- **Component Library**: Beautiful, reusable components powered by shadcn/ui.
+- **Scalable Architecture**: Organized codebase with scalability in mind.
+
+## Tech Stack
+
+- **Next.js**: Framework for server-rendered React applications.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **shadcn/ui**: Modern, accessible UI components.
+- **Auth.js**: Authentication solution supporting various providers.
+- **Prisma ORM**: Type-safe database client for MongoDB.
+- **MongoDB**: NoSQL database for storing application data.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/admin-panel.git
+   cd admin-panel
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables:
+   Create a `.env` file in the root directory and add the following:
+   ```env
+   DATABASE_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/<database-name>?retryWrites=true&w=majority
+   NEXTAUTH_URL=http://localhost:3000
+   GOOGLE_CLIENT_ID=<your-google-client-id>
+   GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+   ```
+
+4. Apply Prisma migrations:
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+## Folder Structure
+
+```
+├── prisma            # Prisma schema and migrations
+├── public            # Static assets
+├── src
+│   ├── app          # Next.js app directory
+│   ├── components   # Reusable components
+│   ├── lib          # Helper functions and utilities
+│   ├── pages        # Next.js pages (if using both app and pages routers)
+│   ├── styles       # Global styles
+│   ├── prisma       # Prisma client
+│   └── middleware   # Middleware for authentication
+├── .env.example      # Environment variable example file
+├── next.config.js    # Next.js configuration
+├── tailwind.config.js # Tailwind CSS configuration
+└── README.md         # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the application for production.
+- `npm run start`: Start the production server.
+- `npx prisma studio`: Open Prisma Studio for database management.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+Contributions are welcome! Please follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Create a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the [MIT License](LICENSE).
 
-## Deploy on Vercel
+## Acknowledgements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Auth.js Documentation](https://authjs.dev/)
+- [shadcn/ui Documentation](https://shadcn.dev/)
